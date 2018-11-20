@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h2 style="background-color: aqua;alignment: center">Well come to our pizza hot</h2>
+
+    <form action="#" th:action="@{/add}" th:object="${piza}" method="post">
+
+        <label>Big Size Piza</label>:<input type="text" th:field="*{customer}" /><br>
+        <label>Medium Size Piza</label>  <input type="text" th:field="*{typeOfPizaOrdered}" /><br>
+        <label >Small Size Piza</label> <input type="text" th:field="*{pizaSmall}" /><br>
+        <label>Cheez</label>:<input type="text" th:field="*{cheese}" /><br>
+        <label>mainuse</label>  <input type="text" th:field="*{mainuse}" /><br>
+        <label >cutchap</label> <input type="text" th:field="*{cutchap}" /><br>
+
+        <p/>Here the price Section for the piaz and topping section come here</p><br>
+
+        <label>Price Large Piza</label>:<input type="number" th:field="*{basePriceBigPiza}" /><br>
+        <label>Price Medium Size Piza</label>  <input type="number" th:field="*{basePriceMudiumPiza}" /><br>
+        <label >Pice Small Size Piza</label> <input type="number" th:field="*{basePriceSmallPiza}" /><br>
+        <label>price Cheese</label><input type="number" th:field="*{priceCheese}" /><br>
+        <label>price Minues</label> <input type="number" th:field="*{priceMinuse}" /><br>
+        <lable>Price Cetchap </lable><input type="number" th:field="*{priceChap}" /><br>
+        <label >Order Quantity </label> <input type="number" th:field="*{qtyOrder}" /><br>
+
+        <div class="form-group row">
+
+            <label for="dateInput" class="col-sm-3 col-form-label">Message Post Date :
+            </label>
+            <div class="col-sm-4">
+                <!--<input type="password" class="form-control" id="inputPassword3" placeholder="Password">-->
+                <input type="date" class="form-control" id="dateInput" name="date" value="">
+                <br />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10 text-center">
+                <button type="submit" class="btn btn-color text-white">Submit
+                </button>
+            </div>
+        </div>
+
+
+    </form>
+</body>
+</html>
