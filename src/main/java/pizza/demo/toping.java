@@ -1,9 +1,7 @@
 package pizza.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class toping {
@@ -12,6 +10,8 @@ public class toping {
     private long id;
     private String topingitem;
     private double topingPrice;
+    @ManyToMany
+    private Set<Pizas> piazass;
 
     public long getId() {
         return id;
@@ -35,5 +35,13 @@ public class toping {
 
     public void setTopingPrice(double topingPrice) {
         this.topingPrice = topingPrice;
+    }
+
+    public Set<Pizas> getPiazass() {
+        return piazass;
+    }
+
+    public void setPiazass(Set<Pizas> piazass) {
+        this.piazass = piazass;
     }
 }
